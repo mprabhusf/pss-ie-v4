@@ -14,3 +14,14 @@
   align-items: center;
   gap: var(--space-3);
 }
+
+.saveForLater {
+  background: transparent;
+  border: none;
+  color: var(--color-accent-outline);
+}
+
+.saveForLater:hover {
+  background: transparent;
+  color: var(--color-primary-active);
+}

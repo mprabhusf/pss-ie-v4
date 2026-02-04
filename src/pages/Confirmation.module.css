@@ -60,14 +60,30 @@
   text-align: left;
 }
 
+.table tbody tr:nth-child(even) {
+  background: var(--color-secondary);
+}
+
+.table tbody tr:nth-child(odd) {
+  background: var(--color-white);
+}
+
+.table tbody tr:first-child td {
+  border-top: 1px solid var(--color-border);
+}
+
+.table td {
+  border-bottom: 1px solid var(--color-border);
+}
+
 .label {
-  padding: var(--space-2) var(--space-4) var(--space-2) 0;
+  padding: var(--space-3) var(--space-4);
   font-size: var(--text-helper);
   color: var(--color-text-muted);
 }
 
 .value {
-  padding: var(--space-2) 0;
+  padding: var(--space-3) var(--space-4);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
 }

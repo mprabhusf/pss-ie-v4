@@ -14,11 +14,11 @@
 }
 
 .link {
-  color: var(--color-text-muted);
+  color: var(--color-info);
 }
 
 .link:hover {
-  color: var(--color-primary);
+  text-decoration: underline;
 }
 
 .text {

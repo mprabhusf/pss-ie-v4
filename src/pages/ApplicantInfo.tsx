@@ -26,16 +26,16 @@ export function ApplicantInfo() {
         <h3 className="section-title">Personal details</h3>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-6)' }}>
           <div>
-            <label className="field-label" htmlFor="first">First Name</label>
-            <input id="first" className="input" placeholder="Enter legal first name" />
+            <label className="field-label required" htmlFor="first">First Name</label>
+            <input id="first" className="input" placeholder="Enter legal first name" aria-required="true" />
           </div>
           <div>
             <label className="field-label" htmlFor="middle">Middle Name</label>
             <input id="middle" className="input" placeholder="Middle name" />
           </div>
           <div>
-            <label className="field-label" htmlFor="last">Last Name</label>
-            <input id="last" className="input" placeholder="Enter legal last name" />
+            <label className="field-label required" htmlFor="last">Last Name</label>
+            <input id="last" className="input" placeholder="Enter legal last name" aria-required="true" />
           </div>
           <div>
             <label className="field-label" htmlFor="suffix">Suffix</label>

@@ -33,7 +33,7 @@ export function BottomActionBar({
     <div className={styles.bar}>
       <div className={styles.left}>
         {showSave && (
-          <button type="button" className="btn btn-secondary">
+          <button type="button" className={`btn ${styles.saveForLater}`}>
             Save for Later
           </button>
         )}

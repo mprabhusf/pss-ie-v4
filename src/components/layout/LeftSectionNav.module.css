@@ -13,9 +13,8 @@
 }
 
 .sectionTitle {
-  font-size: 0.6875rem;
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.05em;
+  font-size: var(--text-helper);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
   padding: var(--space-3) var(--space-4) var(--space-2);
   margin-top: var(--space-2);

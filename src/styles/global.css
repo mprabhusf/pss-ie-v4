@@ -1,44 +1,52 @@
-/* Integrated Eligibility V4 — Design System */
+/* Integrated Eligibility V4 — Visual & Design System */
 
 :root {
-  /* Primary — warm government amber / brown */
-  --color-primary: #b8860b;
-  --color-primary-hover: #9a7209;
-  --color-primary-active: #7d5d07;
-  --color-primary-light: #e8d5a3;
+  /* Primary action / accent — warm amber / burnt orange (#B36A00–#C97A1C) */
+  --color-primary: #c97a1c;
+  --color-primary-hover: #b36a00;
+  --color-primary-active: #9a5a00;
+  --color-primary-light: #fff4ec;
 
-  /* Secondary — soft peach / light beige */
-  --color-secondary: #f5e6d3;
-  --color-secondary-dark: #e8d4bc;
-  --color-page-bg: #faf6f0;
+  /* Secondary accent — muted peach / light apricot (#FCEDE3–#FFF4EC) */
+  --color-secondary: #fcede3;
+  --color-secondary-dark: #fff4ec;
+  --color-page-bg: #fafaf8;
+
+  /* Outline / tertiary (secondary button, Save for Later, footer links) */
+  --color-accent-outline: #b36a00;
+
+  /* Info / selection / links — blue (re-evaluate, links, selected radio) */
+  --color-info: #2563eb;
+  --color-info-light: #eff6ff;
 
   /* Neutrals */
   --color-white: #ffffff;
-  --color-border: #e0ddd8;
-  --color-divider: #e8e6e2;
-  --color-text: #2d2d2d;
-  --color-text-muted: #6b6b6b;
-  --color-text-placeholder: #9a9a9a;
+  --color-border: #e5e7eb;
+  --color-divider: #e5e7eb;
+  --color-text: #1f2933;
+  --color-text-alt: #2e2e2e;
+  --color-text-muted: #6b7280;
+  --color-text-placeholder: #9ca3af;
 
   /* Status */
-  --color-info: #2563eb;
-  --color-info-light: #dbeafe;
-  --color-success: #15803d;
-  --color-success-light: #dcfce7;
+  --color-success: #059669;
+  --color-success-light: #d1fae5;
+  --color-error: #dc2626;
+  --color-error-light: #fee2e2;
 
-  /* Typography */
-  --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --text-page-title: 1.75rem;
-  --text-section: 1.125rem;
-  --text-label: 1rem;
-  --text-helper: 0.875rem;
+  /* Typography — Inter / Source Sans Pro / system UI */
+  --font-sans: 'Inter', 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --text-page-title: 1.5rem;      /* 24px – 28px range */
+  --text-section: 1.125rem;      /* 18–20px */
+  --text-card-title: 1rem;       /* 16px */
+  --text-label: 0.9375rem;       /* 14–15px */
+  --text-helper: 0.8125rem;      /* 12–13px */
   --line-height-tight: 1.3;
   --line-height-normal: 1.5;
-  --line-height-relaxed: 1.65;
+  --line-height-relaxed: 1.6;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
 
   /* Spacing & layout */
   --space-1: 0.25rem;
@@ -51,9 +59,10 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
   --radius: 6px;
-  --radius-lg: 8px;
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius-lg: 10px;
+  --radius-card: 10px;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 2px 6px rgba(0, 0, 0, 0.06);
 
   /* Layout dimensions */
   --header-height: 56px;
@@ -89,10 +98,10 @@ body {
   flex-direction: column;
 }
 
-/* Typography utilities */
+/* Typography utilities — sentence case, clear hierarchy */
 .page-title {
   font-size: var(--text-page-title);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
   color: var(--color-text);
   margin: 0 0 var(--space-2) 0;
@@ -111,6 +120,17 @@ body {
   color: var(--color-text);
   margin-bottom: var(--space-2);
   display: block;
+}
+
+.field-label.required::after {
+  content: ' *';
+  color: var(--color-error);
+}
+
+.error-message {
+  font-size: var(--text-helper);
+  color: var(--color-error);
+  margin-top: var(--space-1);
 }
 
 .helper-text {
@@ -156,13 +176,14 @@ body {
 
 .btn-secondary {
   background: var(--color-white);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
+  color: var(--color-accent-outline);
+  border: 1px solid var(--color-accent-outline);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background: var(--color-page-bg);
-  border-color: var(--color-text-muted);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-active);
+  color: var(--color-primary-active);
 }
 
 .btn-info {
@@ -171,14 +192,14 @@ body {
 }
 
 .btn-info:hover:not(:disabled) {
-  background: #1d4ed8;
+  filter: brightness(0.95);
 }
 
-/* Cards */
+/* Cards — white, 8–12px radius, subtle border/shadow */
 .card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
   padding: var(--space-6);
 }
@@ -207,12 +228,20 @@ body {
   color: var(--color-text-placeholder);
 }
 
+.input:disabled,
+.select:disabled,
+.textarea:disabled {
+  background: var(--color-page-bg);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
 .input:focus,
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px var(--color-primary-light);
+  border-color: var(--color-info);
+  box-shadow: 0 0 0 2px var(--color-info-light);
 }
 
 .select {
@@ -239,14 +268,20 @@ body {
 
 .checkbox-group input {
   width: 1.25rem;
+  min-width: 1.25rem;
   height: 1.25rem;
-  accent-color: var(--color-primary);
+  accent-color: var(--color-info);
   cursor: pointer;
 }
 
-/* Links */
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--color-info);
+}
+
+/* Links — blue (info / tertiary) */
 a {
-  color: var(--color-primary);
+  color: var(--color-info);
   text-decoration: none;
 }
 

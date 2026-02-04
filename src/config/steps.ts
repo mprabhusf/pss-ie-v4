@@ -43,10 +43,10 @@ export const STEPS: StepConfig[] = [
 ]
 
 export const SECTION_HEADERS: Record<string, string> = {
-  qualifier: 'QUALIFIER SECTION',
-  eligibility: 'ELIGIBILITY EVALUATION',
-  program: '', // Program steps use their own labels under SNAP/TANF/MEDICAID
-  submission: 'APPLICATION SUBMISSION',
+  qualifier: 'Qualifier section',
+  eligibility: 'Eligibility evaluation',
+  program: '',
+  submission: 'Application submission',
 }
 
 export const APPLICATION_ID = 'IA-10001'

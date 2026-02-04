@@ -43,6 +43,6 @@
 }
 
 .tabActive {
-  color: var(--color-primary);
+  color: var(--color-text);
   border-bottom-color: var(--color-primary);
 }
